@@ -1,5 +1,16 @@
-<Solution>
-  <Project Path="лаба3/лаба3.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52">
-    <Build Project="false" />
-  </Project>
-</Solution>
+def read_file(method='all'):
+    if method == 'all':
+        with open('example.txt', 'r', encoding='utf-8') as file:
+            shtoto = file.read()
+            print("ЧТЕНИЕ ВСЕГО ФАЙЛА")
+            print(shtoto)
+    elif method == 'line':
+        with open('example.txt', 'r', encoding='utf-8') as file:
+            print("ПОСТРОЧНОЕ ЧТЕНИЕ")
+            line_number = 1
+            for line in file:
+                print(f"Строка {line_number}: {line.strip()}")
+                line_number += 1
+read_file('all')
+read_file('line')
+
